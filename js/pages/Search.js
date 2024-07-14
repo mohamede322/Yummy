@@ -1,4 +1,6 @@
 import Data from "../ui-module.js";
+import Click from "./FigureClick.js";
+
 export default function getData() {
   $(".search-container").removeClass("d-none");
   $("#searchName").on("input", (e) => {
@@ -24,7 +26,7 @@ export default function getData() {
       finalData.meals.forEach((meal) => {
         content += ` 
   <div class="col-lg-3 col-md-4">
-              <figure class="content position-relative rounded-3 overflow-hidden">
+              <figure id="${meal.idMeal}" class="content position-relative rounded-3 overflow-hidden">
                    <figcaption
                 class="position-absolute  bottom-0 start-0 bg-light bg-opacity-75 text-dark w-100 h-100 closed  p-2 d-flex justify-content-center align-items-start flex-column"
               >
@@ -37,6 +39,11 @@ export default function getData() {
       });
     }
     myData.html(content);
+
+    $("figure").on("click", (e) => {
+      let id = e.currentTarget.id;
+      Click("details", id);
+    });
   }
   return myData;
 }
