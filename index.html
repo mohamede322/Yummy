@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="imgs/logo.png" />
+    <meta
+      name="description"
+      content="web application that shows different recipes from different countries and different regions"
+    />
+    <meta
+      name="keywords"
+      content="Food, Ingredients, Categories,Recipes, Egypt"
+    />
+    <meta name="author" content="Mohamed Essam@RouteExam" />
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <title>Yummy</title>
+  </head>
+  <body class="bg-black">
+    <div
+      class="loader-container start-0 bottom-0 end-0 top-0 fixed-top bg-black justify-content-center align-items-center"
+    >
+      <span class="loader"></span>
+    </div>
+    <nav class="d-flex justify-content-start">
+      <div
+        class="nav-content d-flex py-4 px-3 vh-100 bg-black flex-column justify-content-between align-items-start"
+      >
+        <div class="nav-links">
+          <ul class="list-unstyled">
+            <li>
+              <button
+                class="btn text-light pagesBtn"
+                value="search"
+                id="searchBtn"
+              >
+                Search
+              </button>
+            </li>
+            <li>
+              <button
+                class="btn text-light pagesBtn"
+                id="categoriesBtn"
+                value="categories"
+              >
+                Categories
+              </button>
+            </li>
+            <li>
+              <button
+                class="btn text-light pagesBtn"
+                id="areaBtn"
+                value="areas"
+              >
+                Area
+              </button>
+            </li>
+            <li>
+              <button
+                class="btn text-light pagesBtn"
+                id="ingredientsBtn"
+                value="ingredients"
+              >
+                Ingredients
+              </button>
+            </li>
+            <li>
+              <button
+                class="btn text-light pagesBtn"
+                id="contactBtn"
+                value="contact"
+              >
+                Contact Us
+              </button>
+            </li>
+          </ul>
+        </div>
+        <footer class="text-light">
+          <ul
+            class="mb-0 list-unstyled d-flex justify-content-start align-items-center gap-2"
+          >
+            <li>
+              <button
+                class="btn p-0"
+                role="button"
+                aria-label="goToFacebook"
+                name="goToFacebook"
+              >
+                <i class="fa fa-brands fa-facebook text-light"></i>
+              </button>
+            </li>
+            <li>
+              <button
+                class="btn p-0"
+                role="button"
+                aria-label="goToTwitter"
+                name="goToTwitter"
+              >
+                <i class="fa fa-brands fa-twitter text-light"></i>
+              </button>
+            </li>
+            <li>
+              <button
+                class="btn p-0"
+                role="button"
+                aria-label="goToWebsite"
+                name="goToWebsite"
+              >
+                <i class="fa-solid fa-globe text-light"></i>
+              </button>
+            </li>
+          </ul>
+          <p>
+            Copyright Â© 2019 All Rights <br />
+            Reserved.
+          </p>
+        </footer>
+      </div>
+      <div
+        class="nav-menu bg-white px-1 py-4 vh-100 d-flex flex-column justify-content-between align-items-center"
+      >
+        <img src="imgs/logo.png" alt="logo" />
+        <button
+          class="btn toggleMenuBtn p-1"
+          role="button"
+          aria-label="toggleMenu"
+          name="toggleMenu"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <footer
+          class="d-flex flex-column justify-content-start align-items-center"
+        >
+          <button
+            class="btn p-0"
+            role="button"
+            aria-label="goToWebsite"
+            name="goToWebsite"
+          >
+            <i class="fa-solid fa-globe"></i>
+          </button>
+          <button class="btn p-0" role="button" aria-label="share" name="share">
+            <i class="fa-solid fa-share-nodes"></i>
+          </button>
+        </footer>
+      </div>
+    </nav>
+    <main class="main">
+      <div
+        class="container search-container my-3 d-flex d-none flex-column justify-content-center align-items-center gap-3 flex-md-row"
+      >
+        <input
+          type="text"
+          class="form-control bg-transparent text-light"
+          id="searchName"
+          placeholder="Search By Name"
+        />
+        <input
+          type="text"
+          class="form-control bg-transparent text-light"
+          id="searchFLetter"
+          placeholder="Search By First Letter"
+          maxlength="1"
+        />
+      </div>
+      <div class="container py-5 vh-100">
+        <div class="row gy-2" id="myData"></div>
+      </div>
+    </main>
+
+    <script src="js/main.js" type="module"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
