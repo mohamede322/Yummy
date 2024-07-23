@@ -33,7 +33,9 @@ $(() => {
   Meals();
   function getData(method) {
     $("html").scrollTop(0);
+    $("html").css({ overflowY: "hidden" });
     $(".loader-container").css({ display: "flex" });
+
     switch (method) {
       case "categories":
         Categories();
