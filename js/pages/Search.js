@@ -5,16 +5,25 @@ export default function getData() {
   $(".search-container").removeClass("d-none");
   $("#searchName").on("input", (e) => {
     let val = $(e.currentTarget).val();
-    if (val != "") {
-      search("search", val);
-    }
+    searching(val, "search");
   });
   $("#searchFLetter").on("input", (e) => {
     let val = $(e.currentTarget).val();
-    if (val != "") {
-      search("searchF", val);
-    }
+    searching(val, "searchF");
   });
+  function searching(val, method) {
+    if (val != "") {
+      $(".loader-container").css({ display: "flex" });
+      $(".loader-container").removeClass("top-fixed");
+      $(".loader-container").addClass("position-absolute");
+      $("html").css({ overflow: "hidden" });
+      search(method, val).finally(() => {
+        $(".loader-container").fadeOut(500);
+        $(".loader-container").addClass("top-fixed");
+        $(".loader-container").removeClass("position-absolute");
+      });
+    }
+  }
   $(".loader-container").fadeOut(500);
   const myData = $("#myData");
   myData.html("");
