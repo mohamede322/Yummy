@@ -40,6 +40,7 @@ export default class items {
     }
     const data = await response.json().finally(() => {
       $(".loader-container").fadeOut(500);
+      $("html").css({ overflow: "auto" });
     });
     return data;
   }
